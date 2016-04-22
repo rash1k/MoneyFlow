@@ -269,7 +269,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     }
 
     @Override
-    public void   onLoaderReset(Loader<Cursor> cursorLoader) {
+    public void    onLoaderReset(Loader<Cursor> cursorLoader) {
 
     }
 

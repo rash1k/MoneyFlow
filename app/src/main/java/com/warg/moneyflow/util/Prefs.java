@@ -6,7 +6,7 @@ package com.warg.moneyflow.util;
 public class Prefs {
     public static final String LOG_TAG = "MoneyFlow";
 
-    public static final String ID_FIELD_NAME = "_id";
+    public static final String ID_FIELD_NAME =  "_id";
 
     public static final String FN_FIELD_NAME = "first_name";
     public static final String LN_FIELD_NAME = "last_name";

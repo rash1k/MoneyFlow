@@ -36,7 +36,7 @@ public class GetJSONUsers extends AsyncTask<String, Void, Cursor> {
     @Override
     protected Cursor doInBackground(String... params) {
         JSONObject jsonObject = null;
-        MatrixCursor matrixCursor = new MatrixCursor(
+        MatrixCursor matrixCursor  = new MatrixCursor(
                 new String[]{
                         Prefs.ID_FIELD_NAME,
                         Prefs.FN_FIELD_NAME,
