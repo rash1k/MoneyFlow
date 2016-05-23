@@ -1,7 +1,9 @@
 package com.android11.android.moneyflow.util;
 
-public class Prefs {
+import android.net.Uri;
 
+public class Prefs {
+    public static final String LOG_WARN_SQL = "SQLite";
     public static final String LOG_TAG = "Money_Flow";
     public static final String ID_FIELD_NAME = "_id";
 
@@ -10,6 +12,28 @@ public class Prefs {
     public static final String BIRTHDAY_FIELD_NAME = "birthday";
     public static final String EMAIL_FIELD_NAME = "email";
     public static final String API_SERVER = "http://cityfinder.esy.es";
+
+
+//    DB constants
+    public static final String DB_NAME = "MoneyFlowDB";
+    public static final String FIELD_ID = "_id";
+    public static final int DB_CURRENT_VERSION = 1;
+
+// denomination columns
+    public static final String TABLE_NAME_EXPENSES = "expenses";
+    public static final String EXPENSE_FIELD_ID_PASSIVE = "id_passive";
+    public static final String EXPENSE_FIELD_VOLUME = "volume";
+    public static final String EXPENSE_FIELD_DATE = "date";
+
+// name Table
+    public static final String TABLE_NAME_EXPENSE_NAMES = "expense_names";
+    public static final String EXPENSE_NAMES_FIELD_NAME = "name";
+
+//    Provider constants
+    public static final String URI_AUTHORITIES = "com.android11.android.moneyflow.provider";
+    public static final String URI_TYPE_EXPENSE = "expense";
+    public static final Uri URI_EXPENSE = Uri.parse("content://" + URI_AUTHORITIES +"/"+URI_TYPE_EXPENSE);
+
 
 //    public static final Uri API_URI = Uri.parse("content://"+AUTORITY+"/"+PATH_API);
 }

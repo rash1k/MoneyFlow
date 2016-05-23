@@ -1,4 +1,4 @@
-package com.android11.android.moneyflow;
+package com.android11.android.moneyflow.activities;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -13,7 +13,6 @@ import android.content.CursorLoader;
 import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
-import android.os.AsyncTask;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -29,6 +28,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.android11.android.moneyflow.R;
 import com.android11.android.moneyflow.asynctasks.GetJsonUsers;
 import com.android11.android.moneyflow.util.Prefs;
 
