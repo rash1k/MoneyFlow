@@ -1,12 +1,12 @@
 package com.android11.android.moneyflow.activities;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,7 +19,6 @@ import com.android11.android.moneyflow.util.Prefs;
 public class DashboardActivity extends AppCompatActivity {
 
     private Button btnDashboardShowExpenses;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +71,10 @@ public class DashboardActivity extends AppCompatActivity {
 
         switch (view.getId()) {
             case R.id.btnDashboardShowExpenses:
-                if (c != null) {
+
+                Intent intent = new Intent(this,ExpensesActivity.class);
+                startActivity(intent);
+               /* if (c != null) {
                     if (c.moveToFirst()) {
 
                         do {
@@ -85,7 +87,7 @@ public class DashboardActivity extends AppCompatActivity {
                     } else
                         Log.d(Prefs.LOG_TAG, "Table:" + Prefs.TABLE_NAME_EXPENSES + "it contains o rows");
                     c.close();
-                }
+                }*/
                 break;
         }
     }

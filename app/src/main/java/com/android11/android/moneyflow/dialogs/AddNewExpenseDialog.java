@@ -17,7 +17,7 @@ import com.android11.android.moneyflow.services.MyIntentService;
 
 public class AddNewExpenseDialog extends DialogFragment {
 
-    private AutoCompleteTextView etName;
+    private AutoCompleteTextView actName;
     private EditText etVolume;
 
     @Override
@@ -25,7 +25,7 @@ public class AddNewExpenseDialog extends DialogFragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         View view = LayoutInflater.from(getActivity()).inflate(R.layout.dialog_add_expancy, null, false);
 
-        etName = (AutoCompleteTextView) view.findViewById(R.id.acNameOfExpense);
+        actName = (AutoCompleteTextView) view.findViewById(R.id.acNameOfExpense);
         etVolume = (EditText) view.findViewById(R.id.etVolumeOfExpency);
 
 
@@ -36,7 +36,13 @@ public class AddNewExpenseDialog extends DialogFragment {
                 .setPositiveButton(R.string.positive_button_add_new_expency_dialog, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        addNewExpense();
+
+                        String expenseVolume = etVolume.getText().toString();
+                        if (expenseVolume.matches("[0-9]*")) {
+
+                            addNewExpense(actName.getText().toString(), Double.parseDouble(expenseVolume));
+                        }
+
                     }
                 }).setNegativeButton(R.string.negative_button_add_new_expency_dialog, new DialogInterface.OnClickListener() {
             @Override
@@ -47,11 +53,7 @@ public class AddNewExpenseDialog extends DialogFragment {
         return builder.create();
     }
 
-    private void addNewExpense() {
-
-        String name = etName.getText().toString();
-        double volume = Double.parseDouble(etVolume.getText().toString());
-
+    private void addNewExpense(String name, Double volume) {
         Toast.makeText(getActivity(), "Add from dialog", Toast.LENGTH_LONG).show();
 
         MyIntentService.startActionInsertExpense(getActivity(), name, volume);
