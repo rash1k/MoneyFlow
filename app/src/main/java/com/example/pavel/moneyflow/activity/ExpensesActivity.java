@@ -1,5 +1,6 @@
 package com.example.pavel.moneyflow.activity;
 
+import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -7,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 
 import com.example.pavel.moneyflow.R;
 import com.example.pavel.moneyflow.adapters.ExpensesAdapter;
+import com.example.pavel.moneyflow.util.Prefs;
 
 public class ExpensesActivity extends AppCompatActivity {
 
@@ -21,6 +23,9 @@ public class ExpensesActivity extends AppCompatActivity {
         rvExpenses = (RecyclerView) findViewById(R.id.rvExpenses);
         rvExpenses.setLayoutManager(new LinearLayoutManager(this));
 
-        rvExpenses.setAdapter(new ExpensesAdapter(this, null));
+        Cursor c = getContentResolver().query(Prefs.URI_EXPENSE_JOINED, null, null, null, null, null);
+
+
+        rvExpenses.setAdapter(new ExpensesAdapter(this, c));
     }
 }
