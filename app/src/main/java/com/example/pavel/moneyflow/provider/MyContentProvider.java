@@ -14,6 +14,8 @@ import com.example.pavel.moneyflow.util.Prefs;
 
 public class MyContentProvider extends ContentProvider {
 
+    //Test
+
     private SQLiteDatabase database;
     private DBHelper dbHelper;
 
