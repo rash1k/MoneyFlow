@@ -14,8 +14,6 @@ import com.example.pavel.moneyflow.util.Prefs;
 
 public class MyContentProvider extends ContentProvider {
 
-    //Test
-
     private SQLiteDatabase database;
     private DBHelper dbHelper;
 
@@ -44,8 +42,20 @@ public class MyContentProvider extends ContentProvider {
 
     @Override
     public int delete(Uri uri, String selection, String[] selectionArgs) {
-        // Implement this to handle requests to delete one or more rows.
-        throw new UnsupportedOperationException("Not yet implemented");
+        int result = 0;
+        switch (matcher.match(uri)){
+            case URI_CODE_EXPENSE:
+                database = dbHelper.getWritableDatabase();
+                result = database.delete(Prefs.TABLE_EXPENSES, selection, selectionArgs);
+                break;
+            case URI_CODE_EXPENSE_NAME:
+                database = dbHelper.getWritableDatabase();
+                result = database.delete(Prefs.TABLE_EXPENSES_NAMES, selection, selectionArgs);
+                break;
+            default:
+                throw new IllegalArgumentException("Unsupported uri -> " + uri);
+        }
+        return result;
     }
 
     @Override
