@@ -7,7 +7,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.example.pavel.moneyflow.R;
-import com.example.pavel.moneyflow.adapters.ExpensesAdapter;
 import com.example.pavel.moneyflow.adapters.ExpensesCursorAdapter;
 import com.example.pavel.moneyflow.util.Prefs;
 

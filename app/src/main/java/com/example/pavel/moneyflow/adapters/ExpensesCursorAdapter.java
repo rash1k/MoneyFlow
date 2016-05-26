@@ -7,12 +7,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.pavel.moneyflow.R;
+import com.example.pavel.moneyflow.util.DateConverter;
 import com.example.pavel.moneyflow.util.Prefs;
 
 public class ExpensesCursorAdapter extends AbstractCursorRecyclerAdapter<ExpensesViewHolder> {
 
     private Context context;
-
 
     public ExpensesCursorAdapter(Context context, Cursor c) {
         super(c);
@@ -23,7 +23,8 @@ public class ExpensesCursorAdapter extends AbstractCursorRecyclerAdapter<Expense
     public void onBindViewHolder(ExpensesViewHolder holder, Cursor cursor) {
         holder.tvName.setText(cursor.getString(cursor.getColumnIndex(Prefs.EXPENCE_NAMES_FIELDS_NAME)));
         holder.tvVolume.setText(cursor.getString(cursor.getColumnIndex(Prefs.EXPENSE_FIELD_VOLUME)));
-        holder.tvDate.setText(cursor.getString(cursor.getColumnIndex(Prefs.EXPENSE_FIELD_DATE)));
+        holder.tvDate.setText(
+                DateConverter.convertToString(cursor.getString(cursor.getColumnIndex(Prefs.EXPENSE_FIELD_DATE))));
     }
 
     @Override
