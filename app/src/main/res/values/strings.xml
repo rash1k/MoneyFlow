@@ -13,4 +13,14 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
+    <string name="item_menu_expense_text">Add expency</string>
+    <string name="message_add_new_expense_dialog">Add new expency</string>
+    <string name="title_add_new_expense_dialog">Add expency</string>
+    <string name="positive_button_add_new_expense_dialog">Add</string>
+    <string name="negative_button_add_new_expense_dialog">Dismiss</string>
+    <string name="critical">Critical</string>
+    <string name="button_show_expenses_text">Show all Expenses</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_volume">Volume</string>
 </resources>

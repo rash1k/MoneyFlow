@@ -1,13 +1,12 @@
-package com.warg.moneyflow.asynctasks;
+package com.rash1k.moneyflow.asynctasks;
 
 import android.app.Activity;
 import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.os.AsyncTask;
+import android.provider.BaseColumns;
 import android.util.Log;
-
-import com.warg.moneyflow.util.Prefs;
-
+import com.rash1k.moneyflow.util.Prefs;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -19,9 +18,6 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.util.Arrays;
 
-/**
- * Created by Test on 13.04.2016.
- */
 
 public class GetJSONUsers extends AsyncTask<String, Void, Cursor> {
 
@@ -38,7 +34,7 @@ public class GetJSONUsers extends AsyncTask<String, Void, Cursor> {
         JSONObject jsonObject = null;
         MatrixCursor matrixCursor  = new MatrixCursor(
                 new String[]{
-                        Prefs.ID_FIELD_NAME,
+                        BaseColumns._ID,
                         Prefs.FN_FIELD_NAME,
                         Prefs.LN_FIELD_NAME,
                         Prefs.BIRTHDAY_FIELD_NAME,
@@ -61,7 +57,7 @@ public class GetJSONUsers extends AsyncTask<String, Void, Cursor> {
                 localJson = localJson.getJSONObject("user_class");
 
                 Object[] array = new Object[]{
-                        localJson.getInt(Prefs.ID_FIELD_NAME),
+                        localJson.getInt(BaseColumns._ID),
                         localJson.getString(Prefs.FN_FIELD_NAME),
                         localJson.getString(Prefs.LN_FIELD_NAME),
                         localJson.getString(Prefs.BIRTHDAY_FIELD_NAME),
