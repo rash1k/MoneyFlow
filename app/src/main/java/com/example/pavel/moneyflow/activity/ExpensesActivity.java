@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 
 import com.example.pavel.moneyflow.R;
 import com.example.pavel.moneyflow.adapters.ExpensesAdapter;
+import com.example.pavel.moneyflow.adapters.ExpensesCursorAdapter;
 import com.example.pavel.moneyflow.util.Prefs;
 
 public class ExpensesActivity extends AppCompatActivity {
@@ -26,6 +27,6 @@ public class ExpensesActivity extends AppCompatActivity {
         Cursor c = getContentResolver().query(Prefs.URI_EXPENSE_JOINED, null, null, null, null, null);
 
 
-        rvExpenses.setAdapter(new ExpensesAdapter(this, c));
+        rvExpenses.setAdapter(new ExpensesCursorAdapter(this, c));
     }
 }
