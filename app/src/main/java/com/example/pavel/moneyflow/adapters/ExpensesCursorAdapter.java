@@ -25,6 +25,7 @@ public class ExpensesCursorAdapter extends AbstractCursorRecyclerAdapter<Expense
         holder.tvVolume.setText(cursor.getString(cursor.getColumnIndex(Prefs.EXPENSE_FIELD_VOLUME)));
         holder.tvDate.setText(
                 DateConverter.convertToString(cursor.getString(cursor.getColumnIndex(Prefs.EXPENSE_FIELD_DATE))));
+
     }
 
     @Override

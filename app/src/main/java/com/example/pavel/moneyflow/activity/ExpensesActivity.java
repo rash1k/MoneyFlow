@@ -27,5 +27,6 @@ public class ExpensesActivity extends AppCompatActivity {
 
 
         rvExpenses.setAdapter(new ExpensesCursorAdapter(this, c));
+
     }
 }
