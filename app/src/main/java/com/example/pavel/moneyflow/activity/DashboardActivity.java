@@ -25,10 +25,6 @@ public class DashboardActivity extends AppCompatActivity {
     TextView tvExpenses;
     TextView tvExpensesNames;
 
-    //JUST TEST
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,45 +66,7 @@ public class DashboardActivity extends AppCompatActivity {
     }
 
     public void onClickBtnExpenses(View view) {
-
         Intent intent = new Intent(this, ExpensesActivity.class);
         startActivity(intent);
-
-//        Cursor cursorNames = getContentResolver().query(Prefs.URI_EXPENSE_NAME,
-//                null, null, null, null, null);
-////        Log.d(Prefs.LOG_TAG, cursorNames.getCount() + " - cursor names size");
-//        StringBuilder builderNames = new StringBuilder();
-//        while (cursorNames.moveToNext()){
-//            builderNames.append(cursorNames.getString(cursorNames.getColumnIndex(
-//                    Prefs.EXPENCE_NAMES_FIELDS_NAME)) + "\n");
-//        }
-//        tvExpensesNames.setText(builderNames.toString());
-
-        Cursor cursorExpenses = getContentResolver().query(Prefs.URI_EXPENSE, null, null,
-                null, null, null);
-//        Log.d(Prefs.LOG_TAG, cursorExpenses.getCount() + " - cursor expenses size");
-        StringBuilder builderExpenses = new StringBuilder();
-        while (cursorExpenses.moveToNext()){
-            builderExpenses.append(cursorExpenses.getInt(
-                    cursorExpenses.getColumnIndex(Prefs.EXPENSE_FIELD_VOLUME)) + "\n");
-            builderExpenses.append(cursorExpenses.getString(
-                    cursorExpenses.getColumnIndex(Prefs.EXPENSE_FIELD_DATE)) + "\n");
-            builderExpenses.append(cursorExpenses.getInt(
-                    cursorExpenses.getColumnIndex(Prefs.EXPENSE_FIELD_ID_PASSIVE)) + "\n");
-            builderExpenses.append("-------------");
-        };
-        tvExpenses.setText(builderExpenses.toString());
-
-    }
-
-    public void onClickBtnJoin(View view) {
-        Cursor c = getContentResolver().query(Prefs.URI_EXPENSE_JOINED, null, null, null, null, null);
-        while (c.moveToNext()){
-            Log.d(Prefs.LOG_TAG, c.getString(c.getColumnIndex(Prefs.EXPENCE_NAMES_FIELDS_NAME)));
-            Log.d(Prefs.LOG_TAG, c.getString(c.getColumnIndex(Prefs.EXPENSE_FIELD_VOLUME)));
-            Log.d(Prefs.LOG_TAG, c.getString(c.getColumnIndex(Prefs.EXPENSE_FIELD_DATE)));
-            Log.d(Prefs.LOG_TAG, "-----------------------------");
-        }
-
     }
 }

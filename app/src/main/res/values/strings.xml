@@ -22,4 +22,5 @@
     <string name="hint_name">Name</string>
     <string name="hint_volume">Volume</string>
     <string name="btnExpensesLabel">Траты</string>
+    <string name="title_confirm_dialog">Удалить трату?</string>
 </resources>

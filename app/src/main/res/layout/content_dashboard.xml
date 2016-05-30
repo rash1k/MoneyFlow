@@ -18,15 +18,6 @@
         android:onClick="onClickBtnExpenses"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-    <Button
-        android:id="@+id/btnJoin"
-        android:text="Join"
-        android:onClick="onClickBtnJoin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/btnExpenses"
-        android:layout_toEndOf="@+id/btnExpenses" />
     <LinearLayout
         android:layout_marginTop="15dp"
         android:layout_below="@+id/btnExpenses"

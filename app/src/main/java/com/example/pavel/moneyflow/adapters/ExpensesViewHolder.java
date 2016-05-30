@@ -1,5 +1,6 @@
 package com.example.pavel.moneyflow.adapters;
 
+import android.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
