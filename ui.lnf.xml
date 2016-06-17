@@ -1,5 +1,7 @@
 <application>
   <component name="UISettings">
+    <option name="FONT_FACE" value="Segoe UI Light" />
+    <option name="FONT_SIZE" value="14" />
     <option name="EDITOR_TAB_LIMIT" value="25" />
     <option name="HIDE_TOOL_STRIPES" value="false" />
     <option name="SHOW_MAIN_TOOLBAR" value="true" />
