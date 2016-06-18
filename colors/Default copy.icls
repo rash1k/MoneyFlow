@@ -5,12 +5,6 @@
   <option name="CONSOLE_FONT_SIZE" value="12" />
   <option name="EDITOR_FONT_NAME" value="Monospaced" />
   <attributes>
-    <option name="DEFAULT_KEYWORD">
-      <value>
-        <option name="FOREGROUND" value="80" />
-        <option name="FONT_TYPE" value="1" />
-      </value>
-    </option>
     <option name="DEFAULT_TAG" baseAttributes="TEXT" />
     <option name="LOGCAT_DEBUG_OUTPUT">
       <value>
